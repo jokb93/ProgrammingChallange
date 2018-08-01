@@ -1,0 +1,6 @@
+c:\Users\PC\documents\visual studio 2017\Projects\search\ConsoleFrontEnd\bin\Debug\ConsoleFrontEnd.exe.config
+c:\Users\PC\documents\visual studio 2017\Projects\search\ConsoleFrontEnd\bin\Debug\ConsoleFrontEnd.exe
+c:\Users\PC\documents\visual studio 2017\Projects\search\ConsoleFrontEnd\bin\Debug\ConsoleFrontEnd.pdb
+c:\Users\PC\documents\visual studio 2017\Projects\search\ConsoleFrontEnd\obj\Debug\ConsoleFrontEnd.csprojResolveAssemblyReference.cache
+c:\Users\PC\documents\visual studio 2017\Projects\search\ConsoleFrontEnd\obj\Debug\ConsoleFrontEnd.exe
+c:\Users\PC\documents\visual studio 2017\Projects\search\ConsoleFrontEnd\obj\Debug\ConsoleFrontEnd.pdb

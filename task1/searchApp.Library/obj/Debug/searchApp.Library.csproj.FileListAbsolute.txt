@@ -1,0 +1,5 @@
+c:\Users\PC\documents\visual studio 2017\Projects\search\searchApp.Library\bin\Debug\searchApp.Library.dll
+c:\Users\PC\documents\visual studio 2017\Projects\search\searchApp.Library\bin\Debug\searchApp.Library.pdb
+c:\Users\PC\documents\visual studio 2017\Projects\search\searchApp.Library\obj\Debug\searchApp.Library.csprojResolveAssemblyReference.cache
+c:\Users\PC\documents\visual studio 2017\Projects\search\searchApp.Library\obj\Debug\searchApp.Library.dll
+c:\Users\PC\documents\visual studio 2017\Projects\search\searchApp.Library\obj\Debug\searchApp.Library.pdb
