@@ -1,16 +1,20 @@
 //Variables
-let submitButton;
-let passenger_list;
+let passenger_list = document.getElementById("passengers_list");
+let submitButton = document.getElementsByTagName("button")[0];
+let AddPassangerButton = document.getElementsByClassName("add")[0];
 
 //Triggers
-//When doc is ready
-document.addEventListener("DOMContentLoaded", function (event) {
-  showPassengers();
+submitButton.onclick = function (ev) {
+  ev.preventDefault();
+  submitPassanger();
+}
 
-  //Set vars after HTML is loaded
-  submitButton = document.getElementById("submitPassanger");
-  passenger_list = document.getElementById("passengers_list");
-});
+showPassengers();
+
+AddPassangerButton.onclick = function () {
+  passenger_list.style.display = "none"
+  document.getElementById("addPassenger").style.display = "block"
+};
 
 
 //Functions
@@ -37,9 +41,7 @@ function removePassenger(id) {
   showPassengers()
 }
 
-submitButton.onclick = function(ev) {
-  ev.preventDefault()
-
+function submitPassanger(){
   var form = document.getElementsByTagName("form")[0]
   var first = form.elements.firstName.value
   var last = form.elements.lastName.value
@@ -65,10 +67,4 @@ submitButton.onclick = function(ev) {
   showPassengers()
   passenger_list.style.display = "block"
   document.getElementById("addPassenger").style.display = "none"
-}
-
-document.getElementsByClassName("add")[0].onclick = function() {
-  passenger_list.style.display = "none"
-  document.getElementById("addPassenger").style.display = "block"
 };
-
