@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Xml.Linq;
 using NUnit.Framework;
 using searchApp.Library;
+using searchApp.Library.objects;
 
 namespace searchApp.Library.Test
 {
@@ -21,10 +22,10 @@ namespace searchApp.Library.Test
             int MinimumInput = 1;
 
             //Action
-            List<objects.Ride> Rides = searchAppLibrary.GetAvailableTickets("FakeSearch");
+            RidesInformation Fare = searchAppLibrary.GetAvailableTickets("FakeSearch");
 
             //Assert
-            Assert.GreaterOrEqual(Rides.Count, MinimumInput);
+            Assert.GreaterOrEqual(Fare.Rides.Count, MinimumInput);
         }
 
         [Test]
@@ -55,6 +56,21 @@ namespace searchApp.Library.Test
 
             //Assert
             Assert.GreaterOrEqual(Fares.Count, MinimumInput);
+        }
+
+        [Test]
+        public void Get_Duration_Test()
+        {
+
+            //Setup
+            double ExpectedOutput = 15;
+            Connection TestConnection = new Connection("TestStart", "TestEnd", DateTime.Now, DateTime.Now.AddMinutes(15), "TestTain", new List<Fare>());
+
+            //Action
+            double TestDuration = TestConnection.GetDuration();
+
+            //Assert
+            Assert.AreEqual(ExpectedOutput, TestDuration);
         }
 
 

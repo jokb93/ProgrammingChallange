@@ -10,15 +10,13 @@ namespace searchApp.Library
 {
     public class searchAppLibrary
     {
-        static Ride Cheapest;
-        static Ride Fastest;
 
-        public static List<Ride> GetAvailableTickets(string SearchTerm)
+        public static RidesInformation GetAvailableTickets(string SearchTerm)
         {
             //Not gonna use the SearchTerm in this, as it has no fucntion.
 
             //Setup
-            List<Ride> Rides = new List<Ride>();
+            RidesInformation Fare = new RidesInformation();
 
 
             //Read XML
@@ -35,22 +33,22 @@ namespace searchApp.Library
                     Connections
                     );
 
-                Rides.Add(NewRide);
+                Fare.Rides.Add(NewRide);
 
                 //Check for cheapest ride
-                if(Cheapest == null || Cheapest.GetMinimumPrice() > NewRide.GetMinimumPrice())
+                if(Fare.Cheapest == null || Fare.Cheapest.GetMinimumPrice() > NewRide.GetMinimumPrice())
                 {
-                    Cheapest = NewRide;
+                    Fare.Cheapest = NewRide;
                 }
 
                 //Check for fastest ride
-                if (Fastest == null || Fastest.GetRideTime() > NewRide.GetRideTime())
+                if (Fare.Fastest == null || Fare.Fastest.GetRideTime() > NewRide.GetRideTime())
                 {
-                    Fastest = NewRide;
+                    Fare.Fastest = NewRide;
                 }
             }
 
-            return Rides;
+            return Fare;
 
 
         }
@@ -109,5 +107,6 @@ namespace searchApp.Library
 
             return Fares;
         }
+        
     }
 }

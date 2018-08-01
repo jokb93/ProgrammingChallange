@@ -7,21 +7,87 @@ using System.Threading.Tasks;
 namespace searchApp.Library.objects
 {
 
+    public class RidesInformation
+    {
+        //Props
+        public Ride Cheapest
+        {
+            get
+            {
+                return cheapest;
+            }
+            set
+            {
+                cheapest = value;
+            }
+        }
+
+        public Ride Fastest
+        {
+            get
+            {
+                return fastest;
+            }
+            set
+            {
+                fastest = value;
+            }
+        }
+
+        public List<Ride> Rides
+        {
+            get
+            {
+                return rides;
+            }
+        }
+
+        //private vars
+        Ride cheapest;
+        Ride fastest;
+        List<Ride> rides = new List<Ride>();
+
+        //Methods
+        public void SetRides(List<Ride> Rides)
+        {
+            rides = Rides;
+        }
+    }
+
     public class Ride
     {
+        
+        //Props
+        public string ID
+        {
+            get
+            {
+                return id;
+            }
+        }
 
-        String ID;
-        List<Connection> Connections;
+        public List<Connection> Connections
+        {
+            get
+            {
+                return connections;
+            }
+        }
 
+        //Private vars
+        String id;
+        List<Connection> connections;
+
+        //Methods
         public Ride(string ID, List<Connection> Connections)
         {
-            this.ID = ID;
-            this.Connections = Connections;
+            this.id = ID;
+            this.connections = Connections;
         }
 
         public double GetRideTime()
         {
-            return (Connections.Last<Connection>().GetArrival() - Connections[0].GetDepature()).TotalMinutes;
+            return (Connections.Last<Connection>().ArrivalTime - Connections[0].DepartureTime).TotalMinutes;
         }
 
         public double GetMinimumPrice()
@@ -29,66 +95,149 @@ namespace searchApp.Library.objects
             double AccumulatedPrice = 0;
             foreach (Connection Connection in Connections)
             {
-                AccumulatedPrice += Connection.getLowestPrice();
+                AccumulatedPrice += Connection.GetLowestPrice();
             }
 
             return AccumulatedPrice;
+        }
+
+        public string GetID()
+        {
+            return ID;
+        }
+
+        public List<Connection> GetConnections()
+        {
+            return Connections;
         }
 
     }
 
     public class Connection
     {
-        string Start;
-        string Finish;
-        DateTime DepartureTime;
-        DateTime ArrivalTime;
-        string TrainName;
-        List<Fare> Fares;
 
+        //Props
+        public string Start
+        {
+            get
+            {
+                return start;
+            }
+        }
+
+        public string Finish
+        {
+            get
+            {
+                return finish;
+            }
+        }
+
+        public DateTime DepartureTime
+        {
+            get
+            {
+                return departureTime;
+            }
+        }
+
+        public DateTime ArrivalTime
+        {
+            get
+            {
+                return arrivalTime;
+            }
+        }
+
+        public string TrainName
+        {
+            get
+            {
+                return trainName;
+            }
+        }
+
+        public List<Fare> Fares
+        {
+            get
+            {
+                return fares;
+            }
+        }
+
+
+        //Private vars
+        string start;
+        string finish;
+        DateTime departureTime;
+        DateTime arrivalTime;
+        string trainName;
+        List<Fare> fares;
+
+
+        //Methods
         public Connection(string Start, string Finish, DateTime DepartureTime, DateTime ArrivalTime, string TrainName, List<Fare> Fares)
         {
-            this.Start = Start;
-            this.Finish = Finish;
-            this.DepartureTime = DepartureTime;
-            this.ArrivalTime = ArrivalTime;
-            this.TrainName = TrainName;
-            this.Fares = Fares;
+            this.start = Start;
+            this.finish = Finish;
+            this.departureTime = DepartureTime;
+            this.arrivalTime = ArrivalTime;
+            this.trainName = TrainName;
+            this.fares = Fares;
+        }
+        
+        public double GetDuration()
+        {
+            return (ArrivalTime - DepartureTime).TotalMinutes;
         }
 
-        public DateTime GetDepature()
+        public double GetLowestPrice()
         {
-            return DepartureTime;
-        }
-
-        public DateTime GetArrival()
-        {
-            return ArrivalTime;
-        }
-
-        public double getLowestPrice()
-        {
-            return Fares[0].GetPrice();
+            return Fares[0].Price;
         }
 
     }
 
     public class Fare
     {
-        string Name;
-        double Price;
-        string Currency;
 
+        //Props
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+        }
+
+        public double Price
+        {
+            get
+            {
+                return price;
+            }
+        }
+
+        public string Currency
+        {
+            get
+            {
+                return currency;
+            }
+        }
+
+        //Private vars
+        string name;
+        double price;
+        string currency;
+
+        //Methods
         public Fare(string Name, double Price, string Currency)
         {
-            this.Name = Name;
-            this.Price = Price;
-            this.Currency = Currency;
+            this.name = Name;
+            this.price = Price;
+            this.currency = Currency;
         }
 
-        public double GetPrice()
-        {
-            return Price;
-        }
     }
 }
