@@ -10,6 +10,8 @@ namespace searchApp.Library
 {
     public class searchAppLibrary
     {
+        static Ride Cheapest;
+        static Ride Fastest;
 
         public static List<Ride> GetAvailableTickets(string SearchTerm)
         {
@@ -27,10 +29,25 @@ namespace searchApp.Library
             {
                 String ID = element.Element("ID").Value;
                 List<Connection> Connections = ParseConnections(element.Element("Connections"));
-                Rides.Add(new Ride(
+
+                Ride NewRide = new Ride(
                     ID,
                     Connections
-                    ));
+                    );
+
+                Rides.Add(NewRide);
+
+                //Check for cheapest ride
+                if(Cheapest == null || Cheapest.GetMinimumPrice() > NewRide.GetMinimumPrice())
+                {
+                    Cheapest = NewRide;
+                }
+
+                //Check for fastest ride
+                if (Fastest == null || Fastest.GetRideTime() > NewRide.GetRideTime())
+                {
+                    Fastest = NewRide;
+                }
             }
 
             return Rides;
@@ -51,15 +68,18 @@ namespace searchApp.Library
                 DateTime ArrivalTime = DateTime.Parse(Connection.Element("ArrivalTime").Value.ToString());
                 string TrainName = Connection.Element("TrainName").Value.ToString();
 
-                //Creatte Connection
-                Connections.Add(new Connection(
+                Connection NewConnection = new Connection(
                     Start,
                     Finish,
                     DepartureTime,
                     ArrivalTime,
                     TrainName,
                     ParseFares(Connection.Element("Fares"))
-                    ));
+                );
+
+                //Creatte Connection
+                Connections.Add(NewConnection);
+                
             }
             
             return Connections;
@@ -77,11 +97,14 @@ namespace searchApp.Library
                 double Price = Convert.ToDouble(Fare.Element("Price").Element("Value").Value.ToString().Replace('.', ','));
                 string Currency = Fare.Element("Price").Element("Currency").Value.ToString();
 
-                Fares.Add(new Fare(
+                Fare NewFare = new Fare(
                     Name,
                     Price,
                     Currency
-                    ));
+                );
+
+                Fares.Add(NewFare);
+                
             }
 
             return Fares;
