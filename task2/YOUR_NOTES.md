@@ -4,6 +4,8 @@ Dont know much about ruby, but expect it to work the same way on your computer, 
 
 All changes can be seen in the git commits.
 
+tested on chrome desktop in "Mobile mode"
+
 Time spend: roughly 1 hour.
 
 time spend on both task 1+2: roughly 4.5 hour
