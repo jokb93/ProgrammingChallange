@@ -1,8 +1,8 @@
 //Variables
 let passenger_list = document.getElementById("passengers_list");
-let submitButton = document.getElementsByTagName("button")[0];
-let AddPassangerButton = document.getElementsByClassName("add")[0];
-let list = passenger_list.getElementsByClassName("list")[0];
+let submitButton = document.getElementById("submitPassanger");
+let AddPassangerButton = document.getElementById("addPassanger");
+let list = document.getElementById("passangerList");
 
 //Triggers
 submitButton.onclick = function (ev) {
@@ -21,13 +21,14 @@ AddPassangerButton.onclick = function () {
 //Functions
 function showPassengers() {
 
-  list.innerHTML = ""
-
+  list.innerHTML = "<p>Loading passanger list...</p>"
+  
   let XMLRequest = new XMLHttpRequest();
   XMLRequest.open("GET", "http://127.0.0.1:4567/passengers", true);
   XMLRequest.onload = function (e) {
     if (XMLRequest.readyState === 4) {
       if (XMLRequest.status === 200) {
+        list.innerHTML = ""
         
         let jsonObject = JSON.parse(XMLRequest.responseText);
 
@@ -52,28 +53,50 @@ function showPassengers() {
     console.error(XMLRequest.statusText);
   };
   XMLRequest.send(null);
+
 }
 
 function removePassenger(id) {
-  var req = new XMLHttpRequest()
-  req.open("GET", "http://127.0.0.1:4567/remove_passenger?id=" + id, false)
-  req.send()
-  showPassengers()
+
+  list.innerHTML = "<p>Removing passanger...</p>"
+  let XMLRequest = new XMLHttpRequest();
+  XMLRequest.open("GET", `http://127.0.0.1:4567/remove_passenger?id=${id}`, true);
+  XMLRequest.onload = function (e) {
+    if (XMLRequest.readyState === 4) {
+      if (XMLRequest.status === 200) {
+        showPassengers();
+      } else {
+        console.error(XMLRequest.statusText);
+      }
+    }
+  };
+  XMLRequest.onerror = function (e) {
+    console.error(XMLRequest.statusText);
+  };
+  XMLRequest.send(null);
 }
 
 function submitPassanger(){
-  var form = document.getElementsByTagName("form")[0]
-  var first = form.elements.firstName.value
-  var last = form.elements.lastName.value
-  var email = form.elements.email.value
+  let form = document.getElementById("addPassangerForm");
+  let first = form.elements.firstName.value
+  let last = form.elements.lastName.value
+  let email = form.elements.email.value
 
-  if (first == "") {
+  if (ValidateName(first) == 0) {
     alert("First name is required");
+    return
+  } else if (ValidateName(name) == 1){
+    alert("A valid First name is required");
+    return
   }
 
-  if (last == "") {
+
+  if (ValidateName(last) == 0) {
     alert("Last name is required");
-    return;
+    return
+  } else if (ValidateName(last) == 1) {
+    alert("A valid Last name is required");
+    return
   }
 
   if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))) {
@@ -81,10 +104,32 @@ function submitPassanger(){
     return
   }
 
-  var req = new XMLHttpRequest()
-  req.open("GET", "http://127.0.0.1:4567/add_passenger?firstName=" + first + "&lastName=" + last + "&email=" + email, false)
-  req.send()
-  showPassengers()
+
   passenger_list.style.display = "block"
   document.getElementById("addPassenger").style.display = "none"
+  list.innerHTML = "<p>Adding passanger...</p>"
+  let XMLRequest = new XMLHttpRequest();
+  XMLRequest.open("GET", `http://127.0.0.1:4567/add_passenger?firstName=${first}&lastName=${last}&email=${email}`, true);
+  XMLRequest.onload = function (e) {
+    if (XMLRequest.readyState === 4) {
+      if (XMLRequest.status === 200) {
+        showPassengers();
+      } else {
+        console.error(XMLRequest.statusText);
+      }
+    }
+  };
+  XMLRequest.onerror = function (e) {
+    console.error(XMLRequest.statusText);
+  };
+  XMLRequest.send(null);
 };
+
+
+function ValidateName(name){
+  if(name == ""){
+    return 0; // field empty
+  } else if ((/[0-9]/.test(name))){
+    return 1; // invalid input
+  } else return 2
+}
