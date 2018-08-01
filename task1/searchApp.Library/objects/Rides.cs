@@ -43,10 +43,10 @@ namespace searchApp.Library.objects
     public class Fare
     {
         string Name;
-        int Price;
+        double Price;
         string Currency;
 
-        public Fare(string Name, int Price, string Currency)
+        public Fare(string Name, double Price, string Currency)
         {
             this.Name = Name;
             this.Price = Price;

@@ -3,3 +3,8 @@ c:\Users\PC\documents\visual studio 2017\Projects\search\searchApp.Library\bin\D
 c:\Users\PC\documents\visual studio 2017\Projects\search\searchApp.Library\obj\Debug\searchApp.Library.csprojResolveAssemblyReference.cache
 c:\Users\PC\documents\visual studio 2017\Projects\search\searchApp.Library\obj\Debug\searchApp.Library.dll
 c:\Users\PC\documents\visual studio 2017\Projects\search\searchApp.Library\obj\Debug\searchApp.Library.pdb
+C:\Users\PC\Documents\visual studio 2017\Projects\ProgrammingChallange\task1\searchApp.Library\bin\Debug\searchApp.Library.dll
+C:\Users\PC\Documents\visual studio 2017\Projects\ProgrammingChallange\task1\searchApp.Library\bin\Debug\searchApp.Library.pdb
+C:\Users\PC\Documents\visual studio 2017\Projects\ProgrammingChallange\task1\searchApp.Library\obj\Debug\searchApp.Library.csprojResolveAssemblyReference.cache
+C:\Users\PC\Documents\visual studio 2017\Projects\ProgrammingChallange\task1\searchApp.Library\obj\Debug\searchApp.Library.dll
+C:\Users\PC\Documents\visual studio 2017\Projects\ProgrammingChallange\task1\searchApp.Library\obj\Debug\searchApp.Library.pdb

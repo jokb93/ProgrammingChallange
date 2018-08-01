@@ -4,3 +4,11 @@ c:\Users\PC\documents\visual studio 2017\Projects\search\ConsoleFrontEnd\bin\Deb
 c:\Users\PC\documents\visual studio 2017\Projects\search\ConsoleFrontEnd\obj\Debug\ConsoleFrontEnd.csprojResolveAssemblyReference.cache
 c:\Users\PC\documents\visual studio 2017\Projects\search\ConsoleFrontEnd\obj\Debug\ConsoleFrontEnd.exe
 c:\Users\PC\documents\visual studio 2017\Projects\search\ConsoleFrontEnd\obj\Debug\ConsoleFrontEnd.pdb
+C:\Users\PC\Documents\visual studio 2017\Projects\ProgrammingChallange\task1\ConsoleFrontEnd\bin\Debug\ConsoleFrontEnd.exe.config
+C:\Users\PC\Documents\visual studio 2017\Projects\ProgrammingChallange\task1\ConsoleFrontEnd\bin\Debug\ConsoleFrontEnd.exe
+C:\Users\PC\Documents\visual studio 2017\Projects\ProgrammingChallange\task1\ConsoleFrontEnd\bin\Debug\ConsoleFrontEnd.pdb
+C:\Users\PC\Documents\visual studio 2017\Projects\ProgrammingChallange\task1\ConsoleFrontEnd\obj\Debug\ConsoleFrontEnd.csprojResolveAssemblyReference.cache
+C:\Users\PC\Documents\visual studio 2017\Projects\ProgrammingChallange\task1\ConsoleFrontEnd\obj\Debug\ConsoleFrontEnd.exe
+C:\Users\PC\Documents\visual studio 2017\Projects\ProgrammingChallange\task1\ConsoleFrontEnd\obj\Debug\ConsoleFrontEnd.pdb
+C:\Users\PC\Documents\visual studio 2017\Projects\ProgrammingChallange\task1\ConsoleFrontEnd\bin\Debug\searchApp.Library.dll
+C:\Users\PC\Documents\visual studio 2017\Projects\ProgrammingChallange\task1\ConsoleFrontEnd\bin\Debug\searchApp.Library.pdb

@@ -7,3 +7,12 @@ c:\Users\PC\documents\visual studio 2017\Projects\search\searchApp.Library.Tests
 c:\Users\PC\documents\visual studio 2017\Projects\search\searchApp.Library.Tests\obj\Debug\searchApp.Library.Tests.pdb
 C:\Users\PC\documents\visual studio 2017\Projects\search\searchApp.Library.Tests\bin\Debug\searchApp.Library.dll
 C:\Users\PC\documents\visual studio 2017\Projects\search\searchApp.Library.Tests\bin\Debug\searchApp.Library.pdb
+C:\Users\PC\Documents\visual studio 2017\Projects\ProgrammingChallange\task1\searchApp.Library.Tests\bin\Debug\searchApp.Library.Tests.dll
+C:\Users\PC\Documents\visual studio 2017\Projects\ProgrammingChallange\task1\searchApp.Library.Tests\bin\Debug\searchApp.Library.Tests.pdb
+C:\Users\PC\Documents\visual studio 2017\Projects\ProgrammingChallange\task1\searchApp.Library.Tests\bin\Debug\nunit.framework.dll
+C:\Users\PC\Documents\visual studio 2017\Projects\ProgrammingChallange\task1\searchApp.Library.Tests\bin\Debug\searchApp.Library.dll
+C:\Users\PC\Documents\visual studio 2017\Projects\ProgrammingChallange\task1\searchApp.Library.Tests\bin\Debug\searchApp.Library.pdb
+C:\Users\PC\Documents\visual studio 2017\Projects\ProgrammingChallange\task1\searchApp.Library.Tests\bin\Debug\nunit.framework.xml
+C:\Users\PC\Documents\visual studio 2017\Projects\ProgrammingChallange\task1\searchApp.Library.Tests\obj\Debug\searchApp.Library.Tests.csprojResolveAssemblyReference.cache
+C:\Users\PC\Documents\visual studio 2017\Projects\ProgrammingChallange\task1\searchApp.Library.Tests\obj\Debug\searchApp.Library.Tests.dll
+C:\Users\PC\Documents\visual studio 2017\Projects\ProgrammingChallange\task1\searchApp.Library.Tests\obj\Debug\searchApp.Library.Tests.pdb
