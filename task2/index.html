@@ -3,6 +3,7 @@
 <head>
   <meta content="initial-scale=1, maximum-scale=1, width=device-width, user-scalable=no" name="viewport">
   <link rel="stylesheet" media="screen" href="styles.css">
+  <script src="scripts.js" async></script>
   <title>Your passengers</title>
 </head>
 
@@ -19,14 +20,12 @@
   <div id="addPassenger" style="display: none">
     <form>
       <label>Add passenger</label> 
-      First name: <input name="firstName"><br>
-      Last name: <input name="lastName"><br>
-      Email: <input name="email" id="email"><br><br>
+      <p>First name: <input type="text" name="firstName"></p>
+      <p>Last name: <input type="text" name="lastName"></p>
+      <p>Email: <input name="email" type="email" id="email"></p>
       <button>Submit</button>
     </form>
   </div>
   </div>
-
-  <script src="scripts.js"></script>
 </body>
 </html>
