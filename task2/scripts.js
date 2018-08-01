@@ -1,5 +1,19 @@
-var passenger_list = document.getElementById("passengers_list")
+//Variables
+let submitButton;
+let passenger_list;
 
+//Triggers
+//When doc is ready
+document.addEventListener("DOMContentLoaded", function (event) {
+  showPassengers();
+
+  //Set vars after HTML is loaded
+  submitButton = document.getElementById("submitPassanger");
+  passenger_list = document.getElementById("passengers_list");
+});
+
+
+//Functions
 function showPassengers() {
   var req = new XMLHttpRequest();
 
@@ -23,7 +37,6 @@ function removePassenger(id) {
   showPassengers()
 }
 
-var submitButton = document.getElementsByTagName("button")[0]
 submitButton.onclick = function(ev) {
   ev.preventDefault()
 
@@ -59,4 +72,3 @@ document.getElementsByClassName("add")[0].onclick = function() {
   document.getElementById("addPassenger").style.display = "block"
 };
 
-showPassengers()
